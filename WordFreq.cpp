@@ -57,10 +57,10 @@ int main() {
     std::string empty ="";
     while((s=prepare(fin))!=empty )
             ++mapOfWordCount[s]; 
-	// Declaring the type of Predicate that accepts 2 pairs and return a bool
+	// Declaring the type of function that accepts 2 pairs and return a bool
 	typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
  
-	// Defining a lambda function to compare two pairs. It will compare two pairs using second field
+	// Defining a  function to compare two pairs. It will compare two pairs using second field
 	Comparator compFunctor =
 			[](std::pair<std::string, int> elem1 ,std::pair<std::string, int> elem2)
 			{
@@ -75,7 +75,7 @@ int main() {
 	outputFile.open ("output.txt");
 	// Iterate over a set using range base for loop
 	// It will display the items in sorted order of values
-	for (std::pair<std::string, int> element : setOfWords){
+	for (std::pair<std::string, int> element : setOfWords){//possibly auto would be better 
 		std::cout << element.first << " - " << element.second << std::endl;
 		//Outputting overall frequency files 
 		outputFile<< element.first << " - " << element.second << "\n";
