@@ -32,7 +32,7 @@
 		//batch 3 utility
 		Scalar len(const Vector3& vect);
 		Scalar len2(const Vector3& vect);
-		Scalar Normalize(const Vector3& vect);
+		void Normalize(const Vector3& vect);
 		Vector3 Normalized(const Vector3& vect);
 		Vector3 Rotate(const Vector3& vec1, Scalar angle, const Vector3& axis);
 		//Vector3 VectMult(const Vector3& vec1, const Vector3& vec2);
