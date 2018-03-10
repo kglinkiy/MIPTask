@@ -15,7 +15,6 @@ fixit:
 давайте уберем строку
 using namespace std;
 */
-using namespace std;
 
 /*
 fixit: не усложняйте то, что можно сделать просто:
@@ -42,7 +41,7 @@ fixit:
 что значить "подготовить стандартный поток ввода"?
 чем не понравился вариант из презентации?
 */
-std::string prepare(std::istream &in)
+std::string PrepareInputToLower(std::istream &in)
 {
     char c;
     std::string res="";
@@ -67,11 +66,8 @@ int main() {
 	std::map<std::string, int> mapOfWordCount;
 	std::ifstream fin("input.txt");
     	std::string s;
-	/*
-	зачем отдельная переменная под пустую строку?
-	*/
-    	std::string empty ="";
-    	while((s=prepare(fin))!=empty )
+	   	
+    	while((s=PrepareInputToLower(fin))!="" )
             ++mapOfWordCount[s]; 
 	// Declaring the type of function that accepts 2 pairs and return a bool
 
@@ -94,7 +90,7 @@ int main() {
 	может
 	for (const auto& element : setOfWords) ?
 	*/
-	for (std::pair<std::string, int> element : setOfWords){//possibly auto would be better 
+	for (const auto& element : setOfWords){//possibly auto would be better 
 		std::cout << element.first << " - " << element.second << std::endl;
 		//Outputting overall frequency files 
 		outputFile<< element.first << " - " << element.second << "\n";
