@@ -9,38 +9,29 @@
 #include <cctype>
 //#include <cccatch>
 
-/*
-fixit:
-вы все равно везде пишете префикс std::
-давайте уберем строку
-using namespace std;
-*/
+
 
 /*
 fixit: не усложняйте то, что можно сделать просто:
 
+
+
+*/
+typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
 using Pair = std::pair<std::string, int>;
 bool compare(const Pair& lhs, const Pair& rhs)
 {
 	return lhs.second >= rhs.second;
-}
-*/
-typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
- 
+};
 	// Defining a  function to compare two pairs. It will compare two pairs using second field
-Comparator compFunctor =
+/*Comparator compFunctor =
 			[](std::pair<std::string, int> elem1 ,std::pair<std::string, int> elem2)
 			{
 				return elem1.second >= elem2.second;
 			};
-
-
 /*
-fixit:
-из названия неясно, что делает ф-я.
-что значить "подготовить стандартный поток ввода"?
-чем не понравился вариант из презентации?
-*/
+
+
 std::string PrepareInputToLower(std::istream &in)
 {
     char c;
@@ -80,7 +71,7 @@ int main() {
 	работающий. Понятный код -> новый разработчик меньше тратит времени на вникание -> вы экономите деньги компании.
 	*/
 	std::set<std::pair<std::string, int>, Comparator> setOfWords(
-			mapOfWordCount.begin(), mapOfWordCount.end(), compFunctor);
+			mapOfWordCount.begin(), mapOfWordCount.end(),compare);
 			//creating File
 	ofstream outputFile;
 	outputFile.open ("output.txt");
