@@ -29,7 +29,7 @@ bool compare(const Pair& lhs, const Pair& rhs)
 			{
 				return elem1.second >= elem2.second;
 			};
-/*
+*/
 
 
 std::string PrepareInputToLower(std::istream &in)
@@ -64,12 +64,7 @@ int main() {
 
  
 	// Declaring a set that will store the pairs using above comparision logic
-	/*
-	Я понял вашу задумку с компаратором только когда долистал до этого места.
-	Если что-то можно сделать просто, то лучше так и сделать.
-	Когда вы пойдете работать, от вас будут требовать максимально простой/понятный код, а не просто
-	работающий. Понятный код -> новый разработчик меньше тратит времени на вникание -> вы экономите деньги компании.
-	*/
+	
 	std::set<std::pair<std::string, int>, Comparator> setOfWords(
 			mapOfWordCount.begin(), mapOfWordCount.end(),compare);
 			//creating File
@@ -77,10 +72,7 @@ int main() {
 	outputFile.open ("output.txt");
 	// Iterate over a set using range base for loop
 	// It will display the items in sorted order of values
-	/*
-	может
-	for (const auto& element : setOfWords) ?
-	*/
+	
 	for (const auto& element : setOfWords){//possibly auto would be better 
 		std::cout << element.first << " - " << element.second << std::endl;
 		//Outputting overall frequency files 
