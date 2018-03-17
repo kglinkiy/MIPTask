@@ -7,31 +7,23 @@
 #include <map>
 #include <string>
 #include <cctype>
-//#include <cccatch>
 
-
-
-/*
-fixit: не усложняйте то, что можно сделать просто:
-
-
-
-*/
-typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
 using Pair = std::pair<std::string, int>;
+typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
+/*
+using Comparator = std::function<bool(const Pair&, const Pair&)>;
+*/
+
 bool compare(const Pair& lhs, const Pair& rhs)
 {
 	return lhs.second >= rhs.second;
 };
-	// Defining a  function to compare two pairs. It will compare two pairs using second field
-/*Comparator compFunctor =
-			[](std::pair<std::string, int> elem1 ,std::pair<std::string, int> elem2)
-			{
-				return elem1.second >= elem2.second;
-			};
+
+/*
+название переменных, ф-й и т.д. должны быть в одном стиле.
+например, первое слово со строчной, остальные в заглавной:
+prepareInputToLower ... либо все с заглавной, тогда Compare
 */
-
-
 std::string PrepareInputToLower(std::istream &in)
 {
     char c;
