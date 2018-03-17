@@ -24,7 +24,7 @@ bool compare(const Pair& lhs, const Pair& rhs)
 например, первое слово со строчной, остальные в заглавной:
 prepareInputToLower ... либо все с заглавной, тогда Compare
 */
-std::string PrepareInputToLower(std::istream &in)
+std::string prepareInputToLower(std::istream &in)
 {
     char c;
     std::string res="";
