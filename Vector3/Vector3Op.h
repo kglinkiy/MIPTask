@@ -6,10 +6,13 @@
 
 namespace VectMath
 {
+	// fixit: называйте ф-и единообразно ... либо везде со строчной, либо с заглавной
 	Scalar len(const Vector3& vect);
 	Scalar len2(const Vector3& vect);
 
 	void Clamp(Vector3& vect, Scalar length);
+	
+	// почему вы сделали отдельные ф-и, а не методы класса? чем отличается ф-я без суффикса _s от суфф. версии?
 	void Normalize(Vector3& vect);
 	void Normalize_s(Vector3& vect);
 	void SetLength(Vector3& vect, Scalar length);
@@ -24,6 +27,7 @@ namespace VectMath
 	Scalar  MixedMult(const Vector3& vec1, const Vector3& vec2, const Vector3& vec3);
 	Vector3 Rotate( Vector3& vec1, Scalar angle,  Vector3& axis);
 		
+	// вынесите реализацию в cpp
 	inline Scalar len(const Vector3& vect)
 	{
 		return sqrt(vect.X * vect.X + vect.Y * vect.Y + vect.Z * vect.Z);
@@ -31,6 +35,7 @@ namespace VectMath
 
 	inline Scalar len2(const Vector3& vect)
 	{
+		// fixit: дублирование кода
 		return vect.X * vect.X + vect.Y * vect.Y + vect.Z * vect.Z;
 	}
 
