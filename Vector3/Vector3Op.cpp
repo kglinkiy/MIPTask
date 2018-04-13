@@ -8,6 +8,7 @@ namespace VectMath
 	{
 		Scalar vecLength = len2(vect);
 
+		// fixit: может == ?
 		if (vecLength = length * length)
 		{
 			return;
@@ -61,6 +62,7 @@ namespace VectMath
 	{
 		Scalar vecLength = len2(vect);
 
+		// лучше сравнивать с Epsilon, а не с нулем
 		if (vecLength == 0)
 		{
 			return vect;
